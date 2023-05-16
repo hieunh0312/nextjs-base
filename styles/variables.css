@@ -1,0 +1,17 @@
+:root {
+  /* SPACING */
+  --spacing: 10px;
+  --font-size: 10px;
+
+  /* COLORS */
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-primary: #f25840;
+  --color-neutral-1: #5e5e5e;
+
+  /* Z-INDEXES */
+  --z-index-header: 1000;
+  --z-index-header-step: 1001;
+  --z-index-modal: 1050;
+}

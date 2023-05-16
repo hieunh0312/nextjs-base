@@ -1,0 +1,102 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "AdelleSansEXT";
+
+  // @media (max-width: 1023.98px) {
+  //   --spacing: 9px;
+  //   --font-size: 9px;
+  // }
+
+  @media (max-width: 767.98px) {
+    --spacing: 9px;
+    --font-size: 9px;
+  }
+
+  @media (max-width: 575.98px) {
+    --spacing: 8px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  .main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  .text-single {
+    overflow: hidden;
+
+    max-width: 100%;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cursor-unset {
+    cursor: unset;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .text-required {
+    position: relative;
+
+    &::after {
+      content: "*";
+      position: absolute;
+
+      color: var(--color-red-1);
+    }
+  }
+}
+
+// EX: Change global class
+
+.ReactModal {
+  &__Body {
+    &--open {
+      overflow: hidden;
+    }
+  }
+}
+
+svg,
+svg * {
+  fill-opacity: 1;
+}
+
+// EX: This css trick is used to hide the color of auto-fill inputs
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 6000000000s 0s, color 6000000000s 0s;
+}
