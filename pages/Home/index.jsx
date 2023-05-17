@@ -5,6 +5,7 @@ import Head from "next/head";
 import PropTypes from "prop-types";
 
 import Icons from "@/public/icons/Icons";
+import axiosServer from "@/utils/axioServer";
 
 import { PageProps } from "./props";
 
@@ -114,5 +115,18 @@ export default function Home(props = PageProps) {
 Home.propTypes = {
   isAppInitialized: PropTypes.bool,
 };
+
+export async function getServerSideProps() {
+  // EX: this is for server side rendering
+  const data = await axiosServer.get(
+    "https://api.github.com/repos/vercel/next.js"
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 Home.defaultProps = PageProps;
